@@ -12,4 +12,4 @@ LICENCE : [MIT](license.md)
 
 [![C_Sharp](./img/C_Sharp.png)](JS.md)
 [![Perl](./img/Perl.png)](Perl.md)
-[![PHP](./img/PHP.png)](Perl.md)
+[![PHP](./img/PHP.png)](PHP.md)
