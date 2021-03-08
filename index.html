@@ -40,6 +40,40 @@
       echo "<p>Вы подключены к MySQL с использованием базы данных DATABASE_NAME.</p>";
 
     ?>
+
+        <div id="header">
+            <h1>PHP & MySQL: The Missing Manual</h1>
+        </div>
+        <div id="example">Пример 2.1</div>
+        <div id="content">
+            <p>Это запись той информации, которую вы отправили:</p>
+            <p>
+                <?php 
+   $fname = $_REQUEST['first_name'];
+   $lname = $_REQUEST['last_name'];
+   $email = $_REQUEST['email'];
+   $faceurl = $_REQUEST['facebook_url'];
+   $position = strpos($faceurl,"facebook.com"); 
+     if ($position === false) {
+	     $faceurl = "http://www.facebook.com/" . $faceurl ;
+     }
+   $twit = $_REQUEST['twitter_handle'];
+   $twit_url = "http://www.twitter.com/";
+   $position = strpos($twit,"@");
+ if ($position === false) {
+   $twit_url = $twit_url . $twit; } else {
+	   $twit_url = $twit_url . substr($twit,$position + 1);
+ };
+ ?> Имя:
+                <?php echo $fname . '  ' . $lname; ?><br /> Фамилия:
+                <?php echo $lname; ?><br /> Адрес электронной почты:
+                <?php echo $email; ?><br />
+                <a href="<?php echo $faceurl; ?>">URL-адресс в Facebook:</a><br /> Идентификатор в Twitter:
+                <?php echo $twit; ?><br />
+                <a href="<?php echo $twit_url; ?>">Проверьте свои записи в Twitter</a><br />
+            </p>
+        </div>
+        <div id="footer"></div>
 </body>
 
 </html>
