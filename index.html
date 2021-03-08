@@ -25,6 +25,20 @@
       // Выключение выдачи отчетов об ошибках
           error_reporting(0);
         }
+
+        require 'app_config.php';
+        $link = mysqli_connect(DATABASE_HOST,DATABASE_USERNAME,DATABASE_PASSWORD);
+        if ($link == false){
+          print("Ошибка: Невозможно подключиться к phpmyadmin " . mysqli_connect_error());
+        }
+        else {
+          print("Соединение установлено успешно УРА");
+      }
+        mysqli_select_db($link,DATABASE_NAME)
+          or die("<p>Ошибка при выборе базы данных DATABASE_NAME: " .
+        mysqli_error() . "</p>");
+      echo "<p>Вы подключены к MySQL с использованием базы данных DATABASE_NAME.</p>";
+
     ?>
 </body>
 
